@@ -2899,7 +2899,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
             out->compr_config.codec->id =
                 get_snd_codec_id(config->offload_info.format);
 
-        if (audio_is_offload_pcm(config->offload_info.format)) {
+        if (audio_is_linear_pcm(config->offload_info.format)) {
             out->compr_config.fragment_size =
                        platform_get_pcm_offload_buffer_size(&config->offload_info);
         } else {
